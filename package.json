@@ -1,0 +1,23 @@
+{
+  "name": "edge-scroll",
+  "version": "1.0.0",
+  "description": "Edge scrolling for web pages",
+  "main": "edge-scroll.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cutejs/edgescroll.git"
+  },
+  "keywords": [
+    "scroll",
+    "scrolling"
+  ],
+  "author": "Peter Fesz-Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cutejs/edgescroll/issues"
+  },
+  "homepage": "https://github.com/cutejs/edgescroll#readme"
+}
