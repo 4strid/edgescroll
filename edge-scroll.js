@@ -97,7 +97,7 @@
 			}
 		})
 
-		document.addEventListener('scroll', function (evt) {
+		document.addEventListener('scroll', function () {
 			var src
 			if (scroll.scrolling) {
 				src = scroll
@@ -111,6 +111,11 @@
 			scroll.handlers.forEach(function (handler) {
 				handler(scrollX, scrollY, innerWidth, innerHeight)
 			})
+		})
+
+		window.addEventListener('resize', function () {
+			scroll.innerWidth = window.innerWidth
+			scroll.innerHeight = window.innerHeight
 		})
 
 		this.addDeadzone = function (elem) {
