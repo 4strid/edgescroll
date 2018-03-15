@@ -114,8 +114,11 @@
 		})
 
 		window.addEventListener('resize', function () {
-			scroll.innerWidth = window.innerWidth
-			scroll.innerHeight = window.innerHeight
+			// not working in Chrome
+			//scroll.innerWidth = window.innerWidth
+			//scroll.innerHeight = window.innerHeight
+			scroll.innerWidth = document.documentElement.clientWidth
+			scroll.innerHeight = document.documentElement.clientHeight
 		})
 
 		this.addDeadzone = function (elem) {

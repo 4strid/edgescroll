@@ -112,8 +112,11 @@
 	})
 
 	window.addEventListener('resize', function () {
-		scroll.innerWidth = window.innerWidth
-		scroll.innerHeight = window.innerHeight
+		// not working in Chrome. Can't figure out why for the life of me.
+		//scroll.innerWidth = window.innerWidth
+		//scroll.innerHeight = window.innerHeight
+		scroll.innerWidth = document.documentElement.clientWidth
+		scroll.innerHeight = document.documentElement.clientHeight
 	})
 
 
