@@ -1,6 +1,6 @@
 {
   "name": "edge-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Edge scrolling for web pages",
   "main": "edge-scroll.js",
   "scripts": {
