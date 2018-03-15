@@ -87,3 +87,10 @@ var edgeScroll = new EdgeScroll(100, 750);
 
 edgeScroll.addDeadZone(document.getElementById('corner-widget'))
 ```
+
+Edge Scrolling Everywhere
+-------------------------
+For extra fun, try injecting edge-scroll-auto into every web page you visit with a browser
+extension.
+
+I swear you'll wonder why it's not on every web page on the internet by default.
