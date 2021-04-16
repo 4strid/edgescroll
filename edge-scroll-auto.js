@@ -21,10 +21,13 @@
 	this.scrollTick = (function (time) {
 		var elapsed = this.lastTime ? time - this.lastTime : 0
 		this.lastTime = time
-		
+
 		if (this.scrolling === false) {
 			return this.lastTime = 0
 		}
+
+		var scrollByX  = 0
+		var scrollByY = 0
 
 		var centerX = this.innerWidth / 2
 		var centerY = this.innerHeight / 2
@@ -38,7 +41,16 @@
 
 		var velocityX = normalizedX * this.speed * this.clampedVelocity()
 		var velocityY = normalizedY * this.speed * this.clampedVelocity()
-		window.scrollBy(Math.round(velocityX * elapsed / 1000), Math.round(velocityY * elapsed / 1000))
+
+		if (this.clientX <= radius || (this.innerWidth - this.clientX) <= radius) {
+			scrollByX = Math.round(velocityX * elapsed / 1000)
+		}
+		if (this.clientY <= radius || (this.innerHeight - this.clientY) <= radius) {
+			scrollByY = Math.round(velocityY * elapsed / 1000)
+		}
+
+		window.scrollBy(scrollByX, scrollByY)
+
 		this.scrollX = window.scrollX
 		this.scrollY = window.scrollY
 		this.innerWidth = window.innerWidth
@@ -112,13 +124,12 @@
 	})
 
 	window.addEventListener('resize', function () {
-		// not working in Chrome. Can't figure out why for the life of me.
+		// not working in Chrome
 		//scroll.innerWidth = window.innerWidth
 		//scroll.innerHeight = window.innerHeight
 		scroll.innerWidth = document.documentElement.clientWidth
 		scroll.innerHeight = document.documentElement.clientHeight
 	})
-
 
 	this.addDeadzone = function (elem) {
 		function enterDeadzone () {
